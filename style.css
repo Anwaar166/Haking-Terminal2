@@ -1,0 +1,138 @@
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2rem;
+}
+.background-image {
+  background: url("haking-Photoroom.png") no-repeat center center;
+  background-size: contain;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  opacity: 0.08; 
+  z-index: 0;
+}
+
+
+.terminal {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    20% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 0.6rem;
+  height: 1.2rem;
+  background: #00ff00;
+  animation: blink 1s step-start infinite;
+  vertical-align: bottom; 
+  margin-left: 5px;
+}
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.line {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(30, end) forwards;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.spanFade {
+    color: #00ff00;
+    animation-delay: 2s;
+}
+.spanFade1{
+    background-color: gray;
+    font-weight: bolder;
+    padding: 0 .25rem;
+
+}
+
+/* for hackedbaer */
+.hacked-bar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px red;
+  z-index: 9999;
+  animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+  from {
+    opacity: 1;
+    box-shadow: 0 0 20px red;
+  }
+  to {
+    opacity: 0.5;
+    box-shadow: 0 0 40px white;
+  }
+}
+/* Media query for small devices */
+@media (max-width: 575px) {
+  body {
+    padding: 1rem;
+  }
+
+  .terminal {
+    font-size: 13px;
+    gap: 3rem;
+  }
+
+  .blinking-cursor {
+    width: 0.4rem;
+    height: 1rem;
+    margin-left: 0.3rem;
+  }
+
+  .hacked-bar {
+    font-size: 1rem;
+  }
+}
+
